@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Quick Sort algorithm</title>
+    <link rel="stylesheet" href="sort.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Quick Sort algorithm</h1>
+      <p class="sub">
+        Watch quick sort pick a pivot, split the bars into smaller and bigger
+        groups, and repeat until everything is in order.
+      </p>
+
+      <div class="stage">
+        <div class="bars" id="bars" aria-label="Bars being sorted"></div>
+        <div class="marks" id="marks"></div>
+        <p class="msg" id="msg" aria-live="polite">
+          Press “Next step” to begin.
+        </p>
+        <div class="controls">
+          <button id="next">Next step</button>
+          <button id="auto" class="ghost">Auto play</button>
+          <button id="reset" class="ghost">New array</button>
+          <label
+            >Speed <input type="range" id="speed" min="1" max="10" value="5"
+          /></label>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><b id="sSteps">0</b><small>Steps</small></div>
+        <div class="stat"><b id="sCmp">0</b><small>Comparisons</small></div>
+        <div class="stat"><b id="sSwap">0</b><small>Swaps</small></div>
+      </div>
+
+      <div class="legend">
+        <span><i style="background: var(--pivot)"></i>Pivot</span>
+        <span><i style="background: var(--scan)"></i>Being compared</span>
+        <span><i style="background: var(--small)"></i>Smaller than pivot</span>
+        <span><i style="background: var(--big)"></i>Bigger than pivot</span>
+        <span><i style="background: var(--done)"></i>In final place</span>
+        <span><i style="background: var(--dim)"></i>Not in this part</span>
+      </div>
+
+      <p class="how">
+        How it works: the last bar of the current part becomes the pivot. Every
+        other bar is compared with it, and smaller bars are moved to the left
+        side. The pivot then drops between the two sides, which locks it in its
+        final place. The same steps repeat on the left and right parts.
+      </p>
+    </div>
+
+    <script src="func.js"></script>
+  </body>
+</html>
